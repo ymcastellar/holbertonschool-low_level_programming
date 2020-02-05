@@ -1,6 +1,7 @@
 #include <stdio.h>
-/** 
+/**
 * main - this is like a hello world
+* Return: always 0
  */
 
 int main(void)
