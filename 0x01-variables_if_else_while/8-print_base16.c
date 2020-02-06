@@ -20,6 +20,6 @@ while (n1 < 71)
 putchar(n1);
 n1++;
 }
-putchar('\n');
+
 return (0);
 }
