@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
-* main - alphabet
+* main - numberz
 * Return: always 0
 */
 
