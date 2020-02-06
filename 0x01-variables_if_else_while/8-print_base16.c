@@ -8,19 +8,10 @@
 int main(void)
 {
 int n1;
-n1 = 49;
-while (n1 < 58)
-{
-putchar(n1);
-n1++;
-}
-n1 = 65;
-while (n1 < 71)
-{
+for (n1 = 48; n1 < 58; n1++)
+putchar(i);
+for (n1 = 97; n1 < 103; n1++)
 putchar(n1);
 putchar('\n');
-n1++;
-}
-
 return (0);
 }
