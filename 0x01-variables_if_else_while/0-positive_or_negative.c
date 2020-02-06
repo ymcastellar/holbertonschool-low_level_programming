@@ -1,16 +1,16 @@
-#include <stdio.h>
-#include (stdlib.h)
-#include (time.h)
+#include <stdlib.h>
+#include <time.h>
+#include <stdio-h>
 
 /**
-* main - principal funtion
+* main - ramdom number
 * Return: always 0
 */
 
 int main(void)
 {
-srand(time(0));
 int n;
+srand(time(0));
 n = rand() - RAND_MAX / 2;
 if (n > 0)
 {
