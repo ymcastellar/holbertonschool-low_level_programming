@@ -1,6 +1,6 @@
-#include<stdio.h>
-#include(time.h)
-#include(stdio.h)
+#include <stdio.h>
+#include (stdlib.h)
+#include (time.h)
 
 /**
 * main - principal funtion
@@ -9,20 +9,20 @@
 
 int main(void)
 {
-srand(time(NULL));
+srand(time(0));
 int n;
-n = rand();
+n = rand() - RAND_MAX / 2;
 if (n > 0)
 {
-printf("%d is positive", n);
+printf("%d is positive\n", n);
 }
 else if (n < 0)
 {
-printf("%d is negativ", n);
+printf("%d is negativ\n", n);
 }
 else if (n == 0)
 {
-printf("%d is zero", n);
+printf("%d is zero\n", n);
 }
 return (0);
 }
