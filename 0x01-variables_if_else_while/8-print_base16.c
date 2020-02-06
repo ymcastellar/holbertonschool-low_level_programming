@@ -18,7 +18,7 @@ n1 = 65;
 while (n1 < 71)
 {
 putchar(n1);
-putchr('\n');
+putchar('\n');
 n1++;
 }
 
