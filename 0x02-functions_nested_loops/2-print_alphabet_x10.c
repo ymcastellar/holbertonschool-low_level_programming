@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include "2-main.c"
 
 /**
 *print_alphabet_x10 - 2-alphabet
