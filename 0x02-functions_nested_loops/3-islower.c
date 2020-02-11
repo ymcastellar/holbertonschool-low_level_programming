@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include "3-main.c"
+
 
 /**
 *_islower - parametrer c
