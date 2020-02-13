@@ -22,7 +22,7 @@ _putchar(92);
 _putchar('\n');
 c++;
 }
-if(n < 1)
+if (n < 1)
 {
 _putchar('\n');
 }
