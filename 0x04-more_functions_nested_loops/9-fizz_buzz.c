@@ -14,20 +14,25 @@ mul3 = i % 3;
 mul5 = i % 5;
 if (mul3 == 0 && mul5 == 0)
 {
-printf("%s ", "FizzBuzz");
+printf("%s", "FizzBuzz");
 }
 else if (mul3 == 0)
 {
-printf("%s ", "Fizz");
+printf("%s", "Fizz");
 }
 else if (mul5 == 0)
 {
-printf("%s ", "Buzz");
+printf("%s", "Buzz");
 }
 else
 {
-printf("%i ", i);
+printf("%i", i);
 }
+if (i == 100)
+{
+break;
+}
+printf(" ");
 }
 printf("\n");
 return (0);
