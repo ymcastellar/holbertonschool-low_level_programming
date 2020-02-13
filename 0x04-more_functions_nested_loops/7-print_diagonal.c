@@ -1,11 +1,10 @@
 #include "holberton.h"
 /**
- * print_diagonal - task 7
- *
- * @n: parameter
- *
- * Return: void
- */
+* print_diagonal - task 7
+* @n: parameter
+* Return: void
+*/
+
 void print_diagonal(int n)
 {
 int c, c1;
@@ -23,5 +22,8 @@ _putchar(92);
 _putchar('\n');
 c++;
 }
+if(n < 1)
+{
 _putchar('\n');
+}
 }
