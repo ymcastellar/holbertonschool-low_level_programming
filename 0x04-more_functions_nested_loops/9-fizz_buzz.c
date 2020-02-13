@@ -12,7 +12,11 @@ for (i = 1 ; i <= 100 ; i++)
 {
 mul3 = i % 3;
 mul5 = i % 5;
-if (mul3 == 0)
+if(mul3 == 0 && mul5 == 0)
+{
+printf("%s ", "FizzBuzz");
+}
+else if (mul3 == 0)
 {
 printf("%s ", "Fizz");
 }
@@ -20,7 +24,7 @@ else if (mul5 == 0)
 {
 printf("%s ", "Buzz");
 }
-else
+else 
 {
 printf("%i ", i);
 }
