@@ -21,7 +21,7 @@ while (s[cont] != '\0')
 cont++;
 }
 
-for (b = 0; b <= cont / 2; b++)
+for (b = 0; b < cont ; b++)
 {
 cont--;
 temp = s[b];
