@@ -15,6 +15,7 @@ int b, cont;
 temp = s[0];
 cont = 0;
 b = 0;
+
 while (s[cont] != '\0')
 {
 cont++;
