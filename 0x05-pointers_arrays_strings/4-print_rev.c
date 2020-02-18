@@ -19,9 +19,9 @@ cont++;
 
 cont1 = cont;
 
-for(cont1-- ; cont1 >= 0 ; cont1--)
+for (cont1-- ; cont1 >= 0 ; cont1--)
 {
 _putchar(*(s + cont1));
-} 
+}
 _putchar('\n');
 }
