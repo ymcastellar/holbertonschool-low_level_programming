@@ -1,4 +1,6 @@
-/*
+#include "holberton.h"
+
+/**
 *swap_int - task 1
 *@a: parameter int
 *@b: parameter int
