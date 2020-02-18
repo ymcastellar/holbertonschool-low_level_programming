@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * print_array - check the code for Holberton School students.
- *@a: parameter int
- *@n: parameter int
- * Return: Always 0.
- */
+* print_array - check the code for Holberton School students.
+*@a: parameter int
+*@n: parameter int
+*Return: void
+*/
 
 void print_array(int *a, int n)
 {
@@ -15,17 +15,15 @@ int i;
 
 for (i = 0; i < n; i++)
 {
-printf("%d", a[i]);
-
 if (i == n - 1)
 {
-printf(" ");
+printf("%i", a[i]);
 }
 else
 {
-printf(", ");
+printf("%i, ", a[i]);
+}
 }
 
-}
 printf("\n");
 }
