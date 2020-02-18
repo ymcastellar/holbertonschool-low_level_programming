@@ -4,7 +4,7 @@
 /**
  * print_array - check the code for Holberton School students.
  *@a: parameter int
- *Qn: parameter int
+ *@n: parameter int
  * Return: Always 0.
  */
 
