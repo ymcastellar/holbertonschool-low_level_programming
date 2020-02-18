@@ -12,7 +12,7 @@ int cont;
 cont = 0;
 while (*str != '\0')
 {
-if((cont % 2) == 0)
+if ((cont % 2) == 0)
 {
 _putchar(*str);
 }
