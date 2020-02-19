@@ -1,7 +1,4 @@
-#include "holberton.h"
-
-/**
-*_strcpy - string pointed
+- string pointed
 *@src: parameter source
 *@dest: parameter destination
 *Return: dest

@@ -1,4 +1,3 @@
-#include "holberton.h"
 
 /**
 *_strcpy - string pointed
