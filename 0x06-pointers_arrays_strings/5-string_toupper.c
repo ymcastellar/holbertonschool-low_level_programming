@@ -1,6 +1,6 @@
 /**
-*string_touper - sting to uppercase
-*@a- parametetr char
+*string_toupper - sting to uppercase
+*@a: parametetr char
 *Return: a
 */
 
