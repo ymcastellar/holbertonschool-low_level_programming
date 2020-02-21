@@ -33,21 +33,22 @@ return (s);
 
 int char_seperator(char c)
 {
-int i = 0, leng_s;
-int leng_s = 13;
-char seperators[] = { ' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}' };
+int i;
 
-while (seperators < leng_s)
+if (s[0] >= 'a' && s[0] <= 'z')
 {
-if (c == seperators[i++])
+s[0] = s[0] - 32;
+}
+for (i = 1; s[i] != '\0'; i++)
 {
-return (1);
-}
-else
+if ((s[i - 1] == ' ' || s[i - 1] == '\n' || s[i - 1] == '\t'
+|| s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '!'
+|| s[i - 1] == '?' || s[i - 1] == '"' || s[i - 1] == '('
+|| s[i - 1] == ')' || s[i - 1] == '{' || s[i - 1] == '}'
+|| s[i - 1] == '.') && (s[i] > 'a' && s[i] < 'z'))
 {
-return (0); 
+s[i] = s[i] - 32;
 }
 }
-
 return (s);
 }
