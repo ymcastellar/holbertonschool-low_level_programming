@@ -1,12 +1,12 @@
 #include <stdio.h>
-
-
+#include "holberton.h"
 /**
-* wildcmp - compare two strings
-* @s1: string parameter
-* @s2: string parameter
-* Return: int value
+*wildcmp - compare two strings
+*@s1: string parameter
+*@s2: string parameter
+*Return: int value
 */
+
 int wildcmp(char *s1, char *s2)
 {
 if (*s1 == *s2 && *s1 != '\0' && *s2 != '\0')
