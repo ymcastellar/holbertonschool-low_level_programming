@@ -1,5 +1,5 @@
 /**
-* sqrt - square root
+* _sqrt - square root
 * @n: number parameter
 * @i: incrementor parameter
 * Return: int
