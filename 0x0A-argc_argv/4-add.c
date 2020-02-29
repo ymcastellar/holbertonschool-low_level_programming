@@ -20,9 +20,9 @@ if (argc >= 1)
 {
 for (count = 1; count < argc; count++)
 {
-if(isdigit(atoi(argv[count])))
+if (isdigit(atoi(argv[count])))
 {
-if(atoi(argv[count]) > 0 )
+if (atoi(argv[count]) > 0)
 {
 sum += atoi(argv[count]);
 }
