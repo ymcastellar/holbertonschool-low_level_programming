@@ -24,7 +24,7 @@ count++;
 count++;
 }
 count++;
-str = malloc(count * sizeof(char));
+str = malloc(count *sizeof(char));
 if (str == NULL)
 return (NULL);
 begin = str;
