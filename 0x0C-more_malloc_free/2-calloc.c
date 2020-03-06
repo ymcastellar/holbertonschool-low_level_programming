@@ -1,5 +1,7 @@
+#include <stdlib.h>
+
 /**
-* _calloc - function that allocates memory for an array
+*_calloc - function that allocates memory for an array
 *@nmemb: Array parameter.
 *@size: Size of array.
 *
