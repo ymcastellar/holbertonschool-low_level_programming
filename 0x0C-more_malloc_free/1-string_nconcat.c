@@ -17,13 +17,9 @@ char *ptr;
 
 
 if (s1 == NULL)
-{
 s1 = "";
-}
 if (s2 == NULL)
-{
 s2 = "";
-}
 
 for (i = 0; s1[i] != '\0'; i++)
 ;
@@ -37,9 +33,7 @@ n = j;
 ptr = malloc(1 + (i + n) * sizeof(*ptr));
 
 if (ptr == NULL)
-{
 return (NULL);
-}
 
 for (i = 0; s1[i] != '\0'; i++)
 {
