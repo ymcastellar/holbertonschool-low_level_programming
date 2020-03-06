@@ -1,15 +1,15 @@
-#include <stdlib.h>
+#include "holberton.h"
 
 /**
 *_calloc - function that allocates memory for an array
 *@nmemb: Array parameter.
 *@size: Size of array.
-*
 *Return: pointer to the allocated memory.
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+
 unsigned int i;
 char *ar;
 
