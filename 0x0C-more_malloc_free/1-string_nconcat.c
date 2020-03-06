@@ -30,7 +30,7 @@ for (j = 0; s2[j] != '\0'; j++)
 if (n >= j)
 n = j;
 
-ptr = malloc(1 + (i + n) * sizeof(*ptr));
+ptr = malloc(1 + (i + n) *sizeof(*ptr));
 
 if (ptr == NULL)
 return (NULL);
