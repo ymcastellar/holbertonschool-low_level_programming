@@ -21,7 +21,7 @@ return (dest);
 }
 
 /**
- * new_dog - creates a new dog 
+ * new_dog - creates a new dog
  * @name: Dog's Name.
  * @age: Dog's Age.
  * @owner: Dog's Owner.
@@ -47,17 +47,17 @@ if (temp->name == NULL)
 free(temp);
 return (NULL);
 }
-	temp->owner = malloc(sizeof(owner) + 1);
-	if (temp->owner == NULL)
-	{
-		free(temp->name);
-		free(temp);
-		return (NULL);
-	}
+temp->owner = malloc(sizeof(owner) + 1);
+if (temp->owner == NULL)
+{
+free(temp->name);
+free(temp);
+return (NULL);
+}
 
-	temp->name = scpy(name, temp->name);
-	temp->age = age;
-	temp->owner = scpy(owner, temp->owner);
+temp->name = scpy(name, temp->name);
+temp->age = age;
+temp->owner = scpy(owner, temp->owner);
 
-	return (temp);
+return (temp);
 }
