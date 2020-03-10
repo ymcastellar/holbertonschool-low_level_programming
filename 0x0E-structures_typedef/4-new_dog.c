@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib.h>
 /**
  * scpy - Copy a string.
  * @src: Source parameter.
