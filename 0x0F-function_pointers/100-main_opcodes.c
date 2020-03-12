@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * main - entry point 
+ * main - entry point
  * @argc: arg counter
  * @argv: array of pointers
  *
