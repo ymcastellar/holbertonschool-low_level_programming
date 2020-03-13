@@ -1,6 +1,6 @@
 #include "variadic_functions.h"
 
-/*
+/**
 *print_strings - print strings
 *@separator. separator parameter
 *@n: number of parameter
@@ -17,5 +17,16 @@ va_start(list, n);
 for (i = 0 ; i < n ; i++)
 {
 
+if(i != (n - 1) && separator != NULL)
+{
+printf("%s%s", va_arg(list, char*), separator);
 }
+else
+{
+printf("%s", va_arg(list, char*));
+}
+
+}
+va_end(list);
+printf("\n");
 }
