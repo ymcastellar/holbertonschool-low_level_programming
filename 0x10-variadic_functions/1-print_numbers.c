@@ -27,7 +27,7 @@ printf("%i", va_arg(list, unsigned int));
 }
 
 }
-
+va_end(list);
 printf("\n");
 
 }
