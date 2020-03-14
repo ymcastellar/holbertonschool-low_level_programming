@@ -17,7 +17,7 @@ va_start(list, n);
 for (i = 0 ; i < n ; i++)
 {
 
-if(i != (n - 1) && separator != NULL)
+if (i != (n - 1) && separator != NULL)
 {
 printf("%i%s", va_arg(list, unsigned int), separator);
 }
