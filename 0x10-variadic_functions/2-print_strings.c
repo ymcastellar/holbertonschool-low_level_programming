@@ -18,9 +18,9 @@ va_start(list, n);
 for (i = 0 ; i < n ; i++)
 {
 par = va_arg(list, char *);
-if (par == NULL)
+if (!(par))
 {
-printf("(nil)");
+par = "(nil)";
 }
 printf("%s", par);
 
