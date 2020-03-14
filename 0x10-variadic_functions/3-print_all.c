@@ -27,12 +27,12 @@ stformat Dtype[] = {
 };
 
 va_start(list, format);
-j = 0;
 i = 0;
 
 
 while (format != NULL && format[i] != '\0')
 {
+j = 0;
 while (j < 4)
 {
 if (format[i] == *Dtype[j].character)
@@ -42,6 +42,7 @@ separator = ", ";
 }
 j++;
 }
+j = 0;
 i++;
 }
 
