@@ -10,6 +10,12 @@ void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
 
+/**
+ * struct - structure.
+ * @character: parameter used for pointer char.
+ * @ptrfunc: parameter used for function type.
+ */
+
 typedef struct
 {
 char *character;
