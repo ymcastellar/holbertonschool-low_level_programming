@@ -11,6 +11,8 @@ int sum_listint(listint_t *head)
 	listint_t *first;
 	int sum;
 
+	sum = 0;
+
 	first = head;
 
 	if (first == NULL)
