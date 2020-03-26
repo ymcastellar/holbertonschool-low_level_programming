@@ -20,6 +20,7 @@ unsigned int binary_to_uint(const char *b)
 			else if (*b == '0')
 				val <<= 1;
 			else
+				return (0);
 				break;
 		}
 
