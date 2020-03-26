@@ -11,6 +11,7 @@ unsigned int binary_to_uint(const char *b)
 
 	if (*b)
 	{
+
 		unsigned int val;
 
 		for (val = 0; *b; b++)
@@ -20,7 +21,7 @@ unsigned int binary_to_uint(const char *b)
 			else if (*b == '0')
 				val <<= 1;
 			else
-				return (0);
+				val = 0;
 				break;
 		}
 
