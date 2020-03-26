@@ -1,32 +1,28 @@
 #include "holberton.h"
 
 /**
- *int binary_to_uint - convert from binary to a unsigned int
+ *binary_to_uint - convert from binary to a unsigned int
  *@b: pointing to a string
  *Return: converted number
  */
 
 unsigned int binary_to_uint(const char *b)
 {
+	int count = 0;
+	unsigned int dec = 0;
 
-	if (*b)
+	if (b == NULL)
+		return (0);
+
+	while (b[count])
 	{
-
-		unsigned int val;
-
-		for (val = 0; *b; b++)
-		{
-			if (*b == '1')
-				val = (val << 1) | 1;
-			else if (*b == '0')
-				val <<= 1;
-			else
-				val = 0;
-				break;
-		}
-
-		return (val);
+		dec = dec << 1;
+		if (b[count] < '0' || b[count] > '1')
+			return (0);
+		else if (b[count] == '1')
+			dec = dec | 1;
+		count++;
 	}
 
-	return (0);
+	return (dec);
 }
