@@ -9,7 +9,7 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd, fileRead, i = 0;
+	int fd, fileRead;
 	size_t  fileWrite;
 	char *buf;
 
@@ -37,10 +37,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 
-	while (buf && buf[i])
-		i++;
-
-	fileWrite = write(STDOUT_FILENO, buf, i);
+	fileWrite = write(STDOUT_FILENO, buf, fileRead);
 	free(buf);
 	close(fd);
 	if (!fileWrite)
