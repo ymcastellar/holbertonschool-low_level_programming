@@ -1,15 +1,13 @@
 int safe_close(int);
 void write_error(char *);
 void read_error(char *);
-
 /**
- * main - program to copy files
+ * main - entry point for program to copy files
  * @argc: count of arguments passed
  * @argv: array of char pointers to the arguments
  *
  * Return: 1 on success, exits on failure w/ error code
  */
-
 int main(int argc, char *argv[])
 {
 	char buff[1024];
@@ -68,8 +66,8 @@ int main(int argc, char *argv[])
 }
 
 /**
- * safe_close - closes a file and prints error if exist it
- * @filedescriptor:  file to be closed
+ * safe_close - closes a file and exits/prints error if close encounters error
+ * @filedescriptor: file descriptor for file to be closed
  *
  * Return: 1 on success, -1 on failure (status code received from close())
  */
