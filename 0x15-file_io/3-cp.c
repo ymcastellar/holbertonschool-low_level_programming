@@ -1,104 +1,45 @@
-int safe_close(int);
-void write_error(char *);
-void read_error(char *);
-/**
- * main - entry point for program to copy files
- * @argc: count of arguments passed
- * @argv: array of char pointers to the arguments
- *
- * Return: 1 on success, exits on failure w/ error code
- */
-int main(int argc, char *argv[])
-{
-	char buff[1024];
-	int bytes_read = 0, _EOF = 1, from_fd = -1, to_fd = -1, err = 0;
+#define SIZEBUFF 1204
 
-	if (argc != 3)
+/**
+ * main - cps contents of one file to another
+ * @ac: arguement count
+ * @av: arguement list: file names
+ * Return: 0;
+ */
+
+int main(int ac, char **av)
+{
+	int fd, fd_to;
+	int check_in, check_out;
+	char buff[SIZEBUFF];
+	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+
+	if (ac != 3)
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
+	fd = open(av[1], O_RDONLY);
+	if (fd == -1)
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
+	fd_to = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, mode);
+	if (fd_to == -1)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
+	check_in = check_out = 1;
+	while (check_in)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	from_fd = open(argv[1], O_RDONLY);
-	if (from_fd < 0) /* file didn't exist */
-	{
-		read_error(argv[1]);
-		exit(98);
-	}
-	to_fd = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-	if (to_fd < 0) /* failed to open/create to_file */
-	{
-		write_error(argv[2]);
-		safe_close(from_fd);
-		exit(99);
-	}
-	while (_EOF)
-	{
-		_EOF = read(from_fd, buff, 1024);
-		if (_EOF < 0) /* error reading file */
+		check_in = read(fd, buff, SIZEBUFF);
+		if (check_in == -1)
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
+		if (check_in > 0)
 		{
-			read_error(argv[1]);
-			safe_close(from_fd);
-			safe_close(to_fd);
-			exit(98);
-		}
-		else if (_EOF == 0) /* reached end of file */
-			break;
-		bytes_read += _EOF;
-		err = write(to_fd, buff, _EOF);
-		if (err < 0) /* failed to write */
-		{
-			write_error(argv[2]);
-			safe_close(from_fd);
-			safe_close(to_fd);
-			exit(99);
+			check_out = write(fd_to, buff, check_in);
+			if (check_out == -1)
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 		}
 	}
-	err = safe_close(to_fd);
-	if (err < 0) /* close file failure */
-	{
-		safe_close(from_fd);
-		exit(100);
-	}
-	err = safe_close(from_fd);
-	if (err < 0)
-		exit(100);
+	check_out = close(fd);
+	if (check_out == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd), exit(100);
+	check_out = close(fd_to);
+	if (check_out == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to), exit(100);
 	return (0);
-}
-
-/**
- * safe_close - closes a file and exits/prints error if close encounters error
- * @filedescriptor: file descriptor for file to be closed
- *
- * Return: 1 on success, -1 on failure (status code received from close())
- */
-int safe_close(int filedescriptor)
-{
-	int err;
-
-	err = close(filedescriptor);
-	if (err < 0)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", filedescriptor);
-	return (err);
-}
-
-/**
- * read_error - prints a read error message to stderr
- * @filename: filename to print out for errorcode
- *
- * Return: always void
- */
-void read_error(char *filename)
-{
-	dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-}
-
-/**
- * write_error - prints a write error message to stderr
- * @filename: filename to print out for errorcode
- *
- * Return: always void
- */
-void write_error(char *filename)
-{
-	dprintf(STDERR_FILENO, "Error: Can't write to %s\n", filename);
 }
