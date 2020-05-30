@@ -25,17 +25,17 @@ void hash_table_delete(hash_table_t *ht)
 				while (node != NULL)
 				{
 					aux = node->next;
-					free(node->key);
 					free(node->value);
+					free(node->key);
 					free(node);
 					node = aux;
 				}
 
 			}
-			
+
 		}
 		free(ht->array);
 	}
-	
+
 	free(hasht);
 }
