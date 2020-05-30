@@ -1,6 +1,6 @@
 #include "hash_tables.h"
 /**
-*hash_table_delete - prints a hash table
+*hash_table_delete - delete a hash table
 *@ht: hash table
 *Return: void
 */
@@ -8,7 +8,7 @@
 void hash_table_delete(hash_table_t *ht)
 {
 	unsigned long int i;
-	hash_node_t *next;
+	hash_node_t *aux;
 
 	if (ht == NULL || ht->array == NULL || ht->size == 0)
 		return;
@@ -16,11 +16,11 @@ void hash_table_delete(hash_table_t *ht)
 	{
 		while (ht->array[i])
 		{
-			next = ht->array[i]->next;
+			aux = ht->array[i]->next;
 			free(ht->array[i]->key);
 			free(ht->array[i]->value);
 			free(ht->array[i]);
-			ht->array[i] = next;
+			ht->array[i] = aux;
 		}
 	}
 	free(ht->array);
